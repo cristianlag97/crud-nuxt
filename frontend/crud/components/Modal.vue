@@ -1,0 +1,84 @@
+<template>
+  <div>
+    <v-card>
+      <v-card-title>
+        <!-- <span class="headline">{{ formTitle }}</span> -->
+        Hola
+      </v-card-title>
+
+      <v-card-text>
+        <v-container>
+          <v-row>
+            <v-col
+              cols="12"
+              sm="6"
+              md="4"
+            >
+              <v-text-field
+                v-model="editedItem.titulo"
+                label="Titulo"
+              ></v-text-field>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="4"
+            >
+              <v-text-field
+                v-model="editedItem.compras"
+                label="Compras"
+              ></v-text-field>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="4"
+            >
+              <v-text-field
+                v-model="editedItem.fecha_creacion"
+                label="Fecha lanzamiento"
+              ></v-text-field>
+            </v-col>
+            <v-col
+              cols="12"
+              sm="6"
+              md="4"
+            >
+              <v-text-field
+                v-model="editedItem.autor"
+                label="Autor"
+              ></v-text-field>
+            </v-col>  
+          </v-row>
+        </v-container>
+      </v-card-text>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn
+          color="blue darken-1"
+          text
+          @click="close"
+        >
+          Cancel
+        </v-btn>
+        <v-btn
+          color="blue darken-1"
+          text
+          @click="save"
+        >
+          Save
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </div>
+</template>
+<script>
+export default {
+  props:{
+    editedItem:{
+      type:Object,
+      default:null
+    }
+  }
+}
+</script>

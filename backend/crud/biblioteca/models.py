@@ -11,3 +11,6 @@ class Libro(models.Model):
     titulo = models.CharField(max_length=100)
     fecha_creacion = models.DateField()
     compras = models.IntegerField()
+
+    def nombre(self):
+        return self.autor.first_name

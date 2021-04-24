@@ -141,12 +141,18 @@
         </v-btn>
       </template>
     </v-data-table>
+    <Modal :editedItem="editedItem"/>
   </div>
 </template>
 <script>
-
+  import Modal from '@/components/Modal'
   import axios from 'axios'
   export default {
+
+    components:{
+      Modal
+    },
+
     data: () => ({
       dialog: false,
       dialogDelete: false,
@@ -160,7 +166,7 @@
         { text: 'Titulo', value: 'titulo' },
         { text: 'Compras', value: 'compras' },
         { text: 'Fecha lanzamiento', value: 'fecha_creacion' },
-        { text: 'Autor', value: 'autor' },
+        { text: 'Autor', value: 'nombre' },
         { text: 'Actions', value: 'actions', sortable: false },
       ],
       libros:[],
@@ -323,7 +329,7 @@
       },
 
       async getLibro(){
-        let libro = await this.$axios.get('http://127.0.0.1:8000/api/v1/libros/')
+        await this.$axios.get('http://127.0.0.1:8000/api/v1/libros/')
         .then(result => {
           console.log(result.data);
           this.libros = result.data
