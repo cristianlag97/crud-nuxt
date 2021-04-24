@@ -4,7 +4,7 @@ from .views import *
 
 router = routers.DefaultRouter()
 router.register('autor', AutorViewSet)
-router.register('libro', LibroViewSet)
+router.register('libros', LibroViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

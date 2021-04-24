@@ -17,6 +17,9 @@
       <v-btn text to="/inspire">
         Contacto
       </v-btn>
+      <v-btn text to="/libro">
+        Libro
+      </v-btn>
 
     </v-app-bar>
   </div>
